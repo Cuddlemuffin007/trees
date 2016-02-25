@@ -20,7 +20,7 @@ from trees_app.views import index_view, about_view, data_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index_view),
+    url(r'^$', index_view, name='home'),
     url(r'^about$', about_view),
-    url(r'^data$', data_view)
+    url(r'(\w+\s?\w+)', data_view)
 ]

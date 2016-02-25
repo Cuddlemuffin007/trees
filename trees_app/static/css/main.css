@@ -1,0 +1,64 @@
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+    padding-bottom: 15px;
+}
+
+nav {
+    padding-top: 15px;
+}
+
+nav ul li {
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    font-family: Impact, sans-serif;
+    font-size: 2em;
+}
+
+div.col-md-3 {
+    padding-top: 15px;
+}
+
+figure {
+    height: auto;
+    width: auto;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+div.col-md-3 img {
+    height: 400px;
+    width: 250px;
+}
+
+article.about {
+    width: 40%;
+    display: inline-block;
+    float: left;
+}
+
+article.about p {
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+img.about {
+    float: right;
+    height: 375px;
+    width: 375px;
+}
+
+article.data img {
+    float: left;
+}
+
+article.data p {
+    font-family: sans-serif;
+    font-size: 2em;
+    width: 40%;
+    float: right;
+}

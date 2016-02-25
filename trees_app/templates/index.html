@@ -1,10 +1,49 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
 </head>
 <body>
-Spam and Eggs in index.html
+    <div class="container">
+        {% include 'nav.html' %}
+
+        <h1 id="title">My Favorite Trees</h1>
+        <article>
+            <p>
+                Ever since I can remember, there were trees. Tall trees, medium sized trees, glorified bushes.
+                Trees are awesome and allow us to do cool things like build houses and write the books (think websites) which
+                we read in libraries (the internet) all those years ago.
+            </p>
+            <p>
+                Please take some time to learn about a few of my favorite trees found here. If there are other trees
+                you'd like to learn about, please feel free to contact me. Or, you know, Google...
+            </p>
+            <p>
+                Those of you here by mistake were probably looking for <a href="http://www.reddit.com/r/trees">this</a>.
+            </p>
+        </article>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for tree in trees %}
+                <div class="col-md-3">
+                <a href="{{ tree.name }}">
+                    <figure>
+                        <img src="{% static tree.get_image_link %}" alt="{{ tree.name }}"/>
+                        <figcaption><em>{{ tree.scientific_name }}</em></figcaption>
+                    </figure>
+                </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
 </body>
 </html>

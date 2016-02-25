@@ -1,10 +1,33 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>About Me</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
 </head>
 <body>
-Hello from about.html!
+    <div class="container">
+        {% include 'nav.html' %}
+
+        <h1>About</h1>
+        <article class="about">
+            <p>
+                Brennon is a native South Carolinian. In spite of that, he did not include a Palmetto tree in this
+                web app about trees. Possibly this was done to subtly annoy or maybe he just forgot until writing
+                this section.
+            </p>
+            <p>
+                Like many of you, Brennon spends his days in his tree house, thinking about trees, dreaming about trees,
+                programming about trees. It's nuts!
+            </p>
+
+        </article>
+
+        <img class="about" src="{% static 'img/me.jpg' %}"/>
+
+    </div>
 </body>
 </html>

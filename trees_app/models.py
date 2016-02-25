@@ -9,6 +9,10 @@ class Tree(models.Model):
     max_height = models.IntegerField()
     location = models.CharField(max_length=15)
     uses = models.CharField(max_length=50)
+    image = models.CharField(max_length=30, default='image_source')
 
     def __str__(self):
         return self.name
+
+    def get_image_link(self):
+        return self.image

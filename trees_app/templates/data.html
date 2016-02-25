@@ -1,10 +1,31 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tree Data</title>
+    <title>{{ tree }} Data</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
 </head>
 <body>
-Ni! from data.html
+<div class="container">
+    {% include 'nav.html' %}
+    <article class="data">
+        <h1>{{ tree }}<br><small><em>{{ tree.scientific_name }}</em></small></h1>
+        <img src="{% static tree.get_image_link %}"/>
+
+        <p>
+            The {{ tree.scientific_name }} is a {{ tree.get_type_tree_display.lower }} {{ tree.get_wood_display.lower }}
+            tree.
+            Commonly known as {{ tree.name }}, it is primarily found in {{ tree.location }}.
+        </p>
+        <p>
+            The {{ tree.name }} is commonly used for {{ tree.uses }}.
+        </p>
+    </article>
+</div>
+
+
 </body>
 </html>
